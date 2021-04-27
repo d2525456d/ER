@@ -73,4 +73,4 @@ heap.sort<-function(heap)
 vec=c(98,56,36,1,5,8,564,2,3,4,45)
 heap=heap.building(vec)
 heap_sort=heap.sort(heap)
-heap.sort(vec)
+heap_sort
