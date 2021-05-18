@@ -20,3 +20,29 @@ pie(Cases,main="rainbow color", col=rainbow(6),clockwise=TRUE)
 install.packages("plotrix")
 library(plotrix)
 pie3D(Cases,main="3d pie chart", explode=0.1,labels=names(Cases),labelces=0.6,clockwise=TRUE)
+
+#7.2 Bar Chart and Strip Chart
+BFDeaths <- read.table(file="BirdFluDeaths.txt",
+                       sep="\t",
+                       header = TRUE,
+                       )
+names(BFDeaths)
+str(BFDeaths)
+Deaths <-rowSums(BFDeaths[,2:16])
+names(Deaths)<-BFDeaths[,1]
+Deaths
+
+
+#Chia màn hình là 4 phần 2x2
+par(mfrow=c(2,2), mar= c(3,3,2,1))
+
+
+barplot(Cases, main="Bird Flu Cases")
+Counts<-cbind(Cases, Deaths)
+barplot(Counts)
+barplot(t(Counts), col=gray(c(0.5,1)))
+barplot(t(Counts), beside=TRUE)
+
+
+Counts
+t(Counts)
